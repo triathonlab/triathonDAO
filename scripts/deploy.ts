@@ -1,18 +1,73 @@
+/*
+ * @Description: 
+ * @Author: zyq
+ * @Date: 2022-11-08 20:13:22
+ * @LastEditTime: 2022-11-09 15:10:27
+ * @LastEditors: zyq
+ * @Reference: 
+ */
 import { ethers } from "hardhat";
 
 async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const ONE_YEAR_IN_SECS = 365 * 24 * 60 * 60;
-  const unlockTime = currentTimestampInSeconds + ONE_YEAR_IN_SECS;
+  const [deployer] = await ethers.getSigners();
+  const deployment = require("./deploy.exe");
 
-  const lockedAmount = ethers.utils.parseEther("1");
+  const deployments = {
+    trias,
+    geon,
+    part
+    // artwork,
+    // baseProperties,
+    // hull,
+    // weaponRule,
+    // weaponHelper,
+    // ship,
+    // shipExpand,
+    // triathonBatchTool,
+    // nftAuctionPart,
+    // nftAuctionHull,
+    // nftAuctionShip,
+    // nftAuctionArtwork,
+    // nftSellingPart,
+    // nftSellingHull,
+    // nftSellingShip,
+    // nftSellingArtwork,
+    // shipStakingV2,
+    // bscDetectV2,
+    // mysteryBox,
+    // blindBox,
+    // ito,
+    // combinShip
+  } = await deployment.execute(deployer, undefined);
 
-  const Lock = await ethers.getContractFactory("Lock");
-  const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
+  console.log("Trias deployed to:", trias.address);
+  console.log("Geon deployed to:", geon.address);
+  console.log("Part deployed to:", part.address);
+  // console.log("Artwork deployed to:", artwork.address);
+  // console.log("BaseProperties deployed to:", baseProperties.address);
+  // console.log("Hull deployed to:", hull.address);
+  // console.log("WeaponRule deployed to:", weaponRule.address);
+  // console.log("Ship deployed to:", ship.address);
+  // console.log("shipExpand deployed to:", shipExpand.address);
+  // console.log("triathonBatchTool deployed to:", triathonBatchTool.address);
+  // console.log("NFTAuction -> Hull deployed to:", nftAuctionHull.address);
+  // console.log("NFTAuction -> Ship deployed to:", nftAuctionShip.address);
+  // console.log("NFTAuction -> Artwork deployed to:", nftAuctionArtwork.address);
+  // console.log("NFTAuction -> Part deployed to:", nftAuctionPart.address);
+  // console.log("NFTSelling -> Hull deployed to:", nftSellingHull.address);
+  // console.log("NFTSelling -> Ship deployed to:", nftSellingShip.address);
+  // console.log("NFTSelling -> Artwork deployed to:", nftSellingArtwork.address);
+  // console.log("NFTSelling -> Part deployed to:", nftSellingPart.address);
+  // console.log("ShipStakingV2 deployed to:", shipStakingV2.address);
+  // console.log("BlindBox deployed to:", blindBox.address);
+  // console.log("mysteryBox deployed to:", mysteryBox.address);
+  // console.log("bscDetectV2 deployed to:", bscDetectV2.address);
+  // console.log("ITO deployed to:", ito.address);
+  // console.log("combinShip deployed to:", combinShip.address);
 
-  await lock.deployed();
-
-  console.log(`Lock with 1 ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`);
+  // const deployBatchTool = require("./deployBatchTool.exe");
+  // const tool = await deployBatchTool.execute(deployer, deployments, deployer.address);
+  // console.log("TriathonBatchTool deployed to:", tool.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
