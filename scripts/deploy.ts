@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: zyq
  * @Date: 2022-11-08 20:13:22
- * @LastEditTime: 2022-11-09 15:10:27
+ * @LastEditTime: 2022-11-09 20:32:14
  * @LastEditors: zyq
  * @Reference: 
  */
@@ -15,10 +15,12 @@ async function main() {
   const deployments = {
     trias,
     geon,
-    part
+    part,
+    hull,
+    noFreeMint,
     // artwork,
     // baseProperties,
-    // hull,
+ 
     // weaponRule,
     // weaponHelper,
     // ship,
@@ -43,6 +45,8 @@ async function main() {
   console.log("Trias deployed to:", trias.address);
   console.log("Geon deployed to:", geon.address);
   console.log("Part deployed to:", part.address);
+  console.log("Hull deployed to:", hull.address);
+  console.log("NoFreeMint deployed to:", noFreeMint.address);
   // console.log("Artwork deployed to:", artwork.address);
   // console.log("BaseProperties deployed to:", baseProperties.address);
   // console.log("Hull deployed to:", hull.address);

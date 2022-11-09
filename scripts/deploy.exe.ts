@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: zyq
  * @Date: 2022-11-09 14:57:21
- * @LastEditTime: 2022-11-09 15:15:24
+ * @LastEditTime: 2022-11-09 20:31:59
  * @LastEditors: zyq
  * @Reference: 
  */
@@ -28,12 +28,36 @@ async function deploy(deployer, receiver = undefined) {
     const part = await Part.deploy();
     await part.deployed();
 
+    // library BaseProperties
+    const BaseProperties = await ethers.getContractFactory("BaseProperties");
+    const baseProperties = await BaseProperties.deploy();
+    await baseProperties.deployed();
+
+    // Hull
+    const Hull = await ethers.getContractFactory(
+        "contracts/Hull.sol:TriathonLoot",
+        {
+            libraries: {
+                BaseProperties: baseProperties.address,
+            },
+        });
+    const hull = await Hull.deploy(trias.address, receiver.address);
+    await hull.deployed();
+
+    // NoFreeMint
+    const NoFreeMint = await ethers.getContractFactory("NoFreeMint");
+    const noFreeMint = await NoFreeMint.deploy(trias.address,hull.address);
+    await noFreeMint.deployed();
+
+
    
 
     return {
         trias,
         geon,
-        part
+        part,
+        hull,
+        noFreeMint
     };
 }
 
