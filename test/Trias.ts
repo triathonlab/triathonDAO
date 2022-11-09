@@ -1,15 +1,15 @@
 /*
  * @Description: 
  * @Author: zyq
- * @Date: 2022-11-09 11:48:50
- * @LastEditTime: 2022-11-09 15:33:02
+ * @Date: 2022-11-09 15:29:44
+ * @LastEditTime: 2022-11-09 15:29:56
  * @LastEditors: zyq
  * @Reference: 
  */
 import { expect } from "chai";
 import { ethers } from "hardhat";
 
-describe("Geon", function () {
+describe("Trias", function () {
   let deployments;
   let deployer, receiver, addr1;
 
@@ -22,8 +22,7 @@ describe("Geon", function () {
 
   describe("new_mining", async function () {
     it("Should not allow mint without owner", async function () {
-        await expect(deployments.geon.connect(receiver).new_mining(10000)).to.be.revertedWith('Access denied');∂∂∂
-    })
+        await expect(deployments.geon.connect(receiver).new_mining(10000)).to.be.revertedWith('Access denied');∂∂∂∂
 })
 });
 
