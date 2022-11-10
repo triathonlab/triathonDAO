@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: zyq
  * @Date: 2022-11-09 14:57:21
- * @LastEditTime: 2022-11-10 16:32:26
+ * @LastEditTime: 2022-11-10 17:30:31
  * @LastEditors: zyq
  * @Reference: 
  */
@@ -82,6 +82,11 @@ async function deploy(deployer, receiver = undefined) {
      const shipExpand = await ShipExpand.deploy(geon.address, deployer.address,deployer.address);
      await shipExpand.deployed();
 
+      // Artwork
+    const Artwork = await ethers.getContractFactory("ArtworkNFT");
+    const artwork = await Artwork.deploy("Triape NFT", "TRIAPE");
+    await artwork.deployed();
+
    
 
     return {
@@ -93,7 +98,8 @@ async function deploy(deployer, receiver = undefined) {
         weaponRule,
         weaponHelper,
         ship,
-        shipExpand
+        shipExpand,
+        artwork
     };
 }
 

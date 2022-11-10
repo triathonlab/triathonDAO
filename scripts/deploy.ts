@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: zyq
  * @Date: 2022-11-08 20:13:22
- * @LastEditTime: 2022-11-10 16:02:07
+ * @LastEditTime: 2022-11-10 17:28:56
  * @LastEditors: zyq
  * @Reference: 
  */
@@ -22,7 +22,7 @@ async function main() {
     weaponHelper,
     ship,
     shipExpand,
-    // artwork,
+    artwork,
     // baseProperties,
  
     // weaponRule,
@@ -54,7 +54,7 @@ async function main() {
   console.log("weaponHelper deployed to:", weaponHelper.address);
   console.log("Ship deployed to:", ship.address);
   console.log("shipExpand deployed to:", shipExpand.address);
-  // console.log("Artwork deployed to:", artwork.address);
+  console.log("Artwork deployed to:", artwork.address);
   // console.log("BaseProperties deployed to:", baseProperties.address);
   // console.log("Hull deployed to:", hull.address);
   // console.log("WeaponRule deployed to:", weaponRule.address);
