@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: zyq
  * @Date: 2022-11-09 14:57:21
- * @LastEditTime: 2022-11-09 20:31:59
+ * @LastEditTime: 2022-11-10 16:32:26
  * @LastEditors: zyq
  * @Reference: 
  */
@@ -49,6 +49,38 @@ async function deploy(deployer, receiver = undefined) {
     const noFreeMint = await NoFreeMint.deploy(trias.address,hull.address);
     await noFreeMint.deployed();
 
+     // weaponRule
+     const WeaponRule = await ethers.getContractFactory("WeaponRule");
+     const weaponRule = await WeaponRule.deploy();
+     await weaponRule.deployed();
+ 
+     await weaponRule.setRule(222,"Delusionist","Fuzz Testing",[2,0,0,0,4],"https://github.com/TRIAS-DAO/nft_pics/blob/main/polymerization/222.png");
+     await weaponRule.setRule(362,"Destroyer","Network Attack",[0,0,4,0,0],"https://github.com/TRIAS-DAO/nft_pics/blob/main/polymerization/362.png");
+     await weaponRule.setRule(238,"Daemon","Network Interruptions",[1,0,0,4,0],"https://github.com/TRIAS-DAO/nft_pics/blob/main/polymerization/238.png");
+ 
+     // WeaponHelper
+     const WeaponHelper = await ethers.getContractFactory("WeaponHelper");
+     const weaponHelper = await WeaponHelper.deploy(hull.address, baseProperties.address, part.address, weaponRule.address, receiver.address, geon.address);
+     await weaponHelper.deployed();
+ 
+    //  await hull.setApprovalForAll(weaponHelper.address,true);
+    //  await part.setApprovalForAll(weaponHelper.address,true);
+ 
+     // Ship
+     const Ship = await ethers.getContractFactory(
+         "Weapons",
+         // {
+         //     libraries: {
+         //         Base64: base64.address
+         //     }
+         // }
+     );
+     const ship = await Ship.deploy(weaponRule.address,weaponHelper.address);
+     await ship.deployed();
+ 
+     const ShipExpand = await ethers.getContractFactory("ShipExpand");
+     const shipExpand = await ShipExpand.deploy(geon.address, deployer.address,deployer.address);
+     await shipExpand.deployed();
 
    
 
@@ -57,7 +89,11 @@ async function deploy(deployer, receiver = undefined) {
         geon,
         part,
         hull,
-        noFreeMint
+        noFreeMint,
+        weaponRule,
+        weaponHelper,
+        ship,
+        shipExpand
     };
 }
 

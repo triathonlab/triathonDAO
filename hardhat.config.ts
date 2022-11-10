@@ -2,13 +2,14 @@
  * @Description: 
  * @Author: zyq
  * @Date: 2022-11-08 20:13:22
- * @LastEditTime: 2022-11-09 14:40:44
+ * @LastEditTime: 2022-11-10 17:05:57
  * @LastEditors: zyq
  * @Reference: 
  */
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 import "@nomiclabs/hardhat-etherscan";
+import "@nomiclabs/hardhat-web3";
 
 require('dotenv').config();
 // require("dotenv").config();
@@ -18,7 +19,7 @@ const config: HardhatUserConfig = {
   solidity: {
     compilers: [
       {
-        version: "0.8.0",
+        version: "0.8.7",
         settings: {
           optimizer: {
             enabled: true,
