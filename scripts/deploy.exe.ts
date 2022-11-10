@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: zyq
  * @Date: 2022-11-09 14:57:21
- * @LastEditTime: 2022-11-10 18:52:37
+ * @LastEditTime: 2022-11-10 18:59:41
  * @LastEditors: zyq
  * @Reference: 
  */
@@ -97,6 +97,11 @@ async function deploy(deployer, receiver = undefined) {
     let nftSellingHull = await NFTAuction.deploy(trias.address, hull.address, receiver.address);
     await nftSellingHull.deployed();
 
+    // bscDetectV2
+    const BSCDetectV2 = await ethers.getContractFactory("BSCDetectV2");
+    const bscDetectV2 = await BSCDetectV2.deploy(geon.address, deployer.address,deployer.address);
+    await bscDetectV2.deployed();
+
    
 
     return {
@@ -111,7 +116,8 @@ async function deploy(deployer, receiver = undefined) {
         shipExpand,
         artwork,
         nftAuctionHull,
-        nftSellingHull
+        nftSellingHull,
+        bscDetectV2
     };
 }
 

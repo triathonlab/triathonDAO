@@ -5,8 +5,8 @@ describe("shipExpand", function () {
     let deployments;
     let deployer, receiver, addr1;
 
-    let singerAddress = "0x742E4dB18Af5AE0e4f7E66F3B27cd1D3A189DB49";
-    let singerPrivateKey = "fd23500ff03f2c1aeab7d6f2cb89b88749a97e4df5d6f7801816f6bfb6d5b2a6";  
+    let singerAddress = `${process.env.PRVATE_ADDRESS}`; 
+    let singerPrivateKey = `0x${process.env.PRIVATE_BSC_TEST}`; 
     
 
     before(async function () {
