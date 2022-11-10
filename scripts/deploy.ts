@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: zyq
  * @Date: 2022-11-08 20:13:22
- * @LastEditTime: 2022-11-10 17:28:56
+ * @LastEditTime: 2022-11-10 18:36:25
  * @LastEditors: zyq
  * @Reference: 
  */
@@ -23,6 +23,7 @@ async function main() {
     ship,
     shipExpand,
     artwork,
+    nftAuctionHull,
     // baseProperties,
  
     // weaponRule,
@@ -55,6 +56,7 @@ async function main() {
   console.log("Ship deployed to:", ship.address);
   console.log("shipExpand deployed to:", shipExpand.address);
   console.log("Artwork deployed to:", artwork.address);
+  console.log("NFTAuction -> Hull deployed to:", nftAuctionHull.address);
   // console.log("BaseProperties deployed to:", baseProperties.address);
   // console.log("Hull deployed to:", hull.address);
   // console.log("WeaponRule deployed to:", weaponRule.address);

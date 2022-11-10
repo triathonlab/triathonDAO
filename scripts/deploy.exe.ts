@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: zyq
  * @Date: 2022-11-09 14:57:21
- * @LastEditTime: 2022-11-10 17:30:31
+ * @LastEditTime: 2022-11-10 18:36:03
  * @LastEditors: zyq
  * @Reference: 
  */
@@ -87,6 +87,11 @@ async function deploy(deployer, receiver = undefined) {
     const artwork = await Artwork.deploy("Triape NFT", "TRIAPE");
     await artwork.deployed();
 
+    // NFTAuction --> Hull
+    const NFTAuction = await ethers.getContractFactory("TriathonAuction");
+    let nftAuctionHull = await NFTAuction.deploy(trias.address, hull.address, receiver.address);
+    await nftAuctionHull.deployed();
+
    
 
     return {
@@ -99,7 +104,8 @@ async function deploy(deployer, receiver = undefined) {
         weaponHelper,
         ship,
         shipExpand,
-        artwork
+        artwork,
+        nftAuctionHull
     };
 }
 
