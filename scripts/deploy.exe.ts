@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: zyq
  * @Date: 2022-11-09 14:57:21
- * @LastEditTime: 2022-11-10 18:36:03
+ * @LastEditTime: 2022-11-10 18:52:37
  * @LastEditors: zyq
  * @Reference: 
  */
@@ -92,6 +92,11 @@ async function deploy(deployer, receiver = undefined) {
     let nftAuctionHull = await NFTAuction.deploy(trias.address, hull.address, receiver.address);
     await nftAuctionHull.deployed();
 
+    // NFTSelling --> Hull
+    const NFTSelling = await ethers.getContractFactory("Triathon721Selling");
+    let nftSellingHull = await NFTAuction.deploy(trias.address, hull.address, receiver.address);
+    await nftSellingHull.deployed();
+
    
 
     return {
@@ -105,7 +110,8 @@ async function deploy(deployer, receiver = undefined) {
         ship,
         shipExpand,
         artwork,
-        nftAuctionHull
+        nftAuctionHull,
+        nftSellingHull
     };
 }
 
