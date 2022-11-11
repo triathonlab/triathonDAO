@@ -1,6 +1,12 @@
 # ![Logo](https://ucarecdn.com/f97d01e4-ef61-4b94-a4e2-2a17f7051da5/image.png) Triathon contracts
 
-Triathon is a decentralized community-driven blockchain and DApp testing framework. Backed by Trias' trusted computing technology, Triathon is designed to be a trusted and reliable blockchain infrastructure and applied to testing and auditing projects before launching. And through community-defined tests, Triathon will connect outstanding projects with funds as well as consensus. 
+Triathon is Decentralized Test-driven and Fundraising Platform. 
+
+- Everyone can participate the testing process through entertainment.
+
+- With the help of chaos fuzz automatic test machaine, Triathon can make test cases more efficiency and effective.
+- A project is tested in multiple aspects and the testing results can play an important part in making investment decisions for investors.
+- With the optimization and improvements on their performance, projects will gain recognition and trust from investors, and participate ITO fundingraising.
 
 [Our website](https://www.triathon.space/)
 
@@ -113,3 +119,26 @@ Contracts files under the 'contracts' directory are all contracts developed for 
 ## Activity
 
 * BSCDetectV2.sol: use a different method to calculate the earning to replce ShipStaking.
+
+## Staking reward
+
+
+* NFT staking rewards are determined based on the number of spaceships staked by users (M0).
+
+* Rewards is issued once a day, and the total amount of geon tokens generated is M0*fixed coefficient.
+
+* The reward of user points is determined by the following factors:
+  
+  1、Component (prop) energy: number of props×100×20%
+
+  2、Level energy: Level value x40%
+
+  3、Combat Energy: Combat Strength x10%
+
+  4、HP energy: HP value x10%
+
+  5、Category energy: Category value x20%
+
+*  NFT energy value = component energy + level energy + combat force energy + blood volume energy + category energy
+
+ Single NFT test reward = single NFT energy value / total energy value of all NFTs * NFT number * 248
