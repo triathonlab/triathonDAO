@@ -2,8 +2,8 @@ import { expect } from "chai";
 import { ethers } from "hardhat";
 
 describe("shipExpand", function () {
-    let deployments;
-    let deployer, receiver, addr1;
+    let deployments:any;
+    let deployer:any, receiver:any, addr1:any;
 
     let singerAddress = `${process.env.PRVATE_ADDRESS}`; 
     let singerPrivateKey = `0x${process.env.PRIVATE_BSC_TEST}`; 
@@ -11,7 +11,7 @@ describe("shipExpand", function () {
 
     before(async function () {
         [deployer, receiver, addr1] = await ethers.getSigners();
-        const deployment = require("../scripts/deploy.exe");
+        const deployment = require("../scripts/deployAll");
 
         deployments = await deployment.execute(deployer, receiver);
     });

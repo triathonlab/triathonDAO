@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: zyq
  * @Date: 2022-11-10 19:00:39
- * @LastEditTime: 2022-11-10 20:45:26
+ * @LastEditTime: 2022-11-11 14:32:19
  * @LastEditors: zyq
  * @Reference: 
  */
@@ -10,8 +10,8 @@ import { expect } from "chai";
 import { ethers } from "hardhat";
 
 describe("BSCDetectV2", function () {
-    let deployments;
-    let deployer, receiver, addr1;
+    let deployments:any;
+    let deployer:any, receiver:any, addr1:any;
 
     let singerAddress = `${process.env.PRVATE_ADDRESS}`; 
     let singerPrivateKey = `0x${process.env.PRIVATE_BSC_TEST}`; 
@@ -19,7 +19,7 @@ describe("BSCDetectV2", function () {
 
     before(async function () {
         [deployer, receiver, addr1] = await ethers.getSigners();
-        const deployment = require("../scripts/deploy.exe");
+        const deployment = require("../scripts/deployAll");
 
         deployments = await deployment.execute(deployer, receiver);
     });

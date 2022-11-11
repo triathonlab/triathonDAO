@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: zyq
  * @Date: 2022-11-10 16:00:35
- * @LastEditTime: 2022-11-10 16:49:02
+ * @LastEditTime: 2022-11-11 14:33:01
  * @LastEditors: zyq
  * @Reference: 
  */
@@ -12,12 +12,12 @@ import { ethers } from "hardhat";
 
 describe("Ship", function () {
 
-    let deployments;
-    let deployer, receiver, addr1;
+    let deployments:any;
+    let deployer:any, receiver:any, addr1:any;
 
     before(async function () {
         [deployer, receiver, addr1] = await ethers.getSigners();
-        const deployment = require("../scripts/deploy.exe");
+        const deployment = require("../scripts/deployAll");
 
         deployments = await deployment.execute(deployer, receiver);
     });

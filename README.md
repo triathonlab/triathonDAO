@@ -112,6 +112,4 @@ Contracts files under the 'contracts' directory are all contracts developed for 
 
 ## Activity
 
-* BlindBox.sol: open an blindbox for 4 kinds of NFT described up.
-* ShipStaking.sol: stake your Ship NFT to get Geon Token.
-* ShipStakingV2.sol: use a different method to calculate the earning to replce ShipStaking.
+* BSCDetectV2.sol: use a different method to calculate the earning to replce ShipStaking.

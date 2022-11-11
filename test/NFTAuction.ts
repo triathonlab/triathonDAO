@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: zyq
  * @Date: 2022-11-10 17:43:55
- * @LastEditTime: 2022-11-10 18:37:24
+ * @LastEditTime: 2022-11-11 14:32:36
  * @LastEditors: zyq
  * @Reference: 
  */
@@ -11,12 +11,12 @@ import { ethers } from "hardhat";
 
 describe("NFTAuction", function () {
 
-    let deployments;
-    let deployer, receiver;
+    let deployments:any;
+    let deployer:any, receiver:any;
 
     before(async function () {
         [deployer, receiver] = await ethers.getSigners();
-        const deployment = require("../scripts/deploy.exe");
+        const deployment = require("../scripts/deployAll");
 
         deployments = await deployment.execute(deployer, receiver);
     });
