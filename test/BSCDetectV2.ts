@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: zyq
  * @Date: 2022-11-10 19:00:39
- * @LastEditTime: 2022-11-11 14:32:19
+ * @LastEditTime: 2022-11-21 10:53:36
  * @LastEditors: zyq
  * @Reference: 
  */
@@ -121,7 +121,6 @@ describe("BSCDetectV2", function () {
         it("should sign with privateKey",async function(){
             const userAddress = "0x877D9D69bb4cAA7C7a302Cdc03A646917eA3e4Af";
             const contractAddress = "0xE5913A0358d1600fBF3D73DF2F1e2d791228A8b1";
-            const privatkey = "fd23500ff03f2c1aeab7d6f2cb89b88749a97e4df5d6f7801816f6bfb6d5b2a6";
 
             //const claimInfoHash = web3.utils.soliditySha3({t: 'address', v: contractAddress},{t: 'address', v: userAddress},{t: 'uint256[]', v: [9111]},{t: 'uint256', v: 1});
             const claimInfoHash = web3.utils.soliditySha3({t: 'address', v: contractAddress},{t: 'address', v: userAddress},{t: 'uint256[]', v: [18479]},{t: 'uint256', v: 0});
@@ -136,9 +135,6 @@ describe("BSCDetectV2", function () {
             console.log("r:",r);
             console.log("s:",s);
         })
-
-        //0x02ccfe67326216fdaff7c9d4ccdfc41293419547e7bb00107e80cac322dc210a
-        //0x9824aee5b6bdec718ddd1a0f518c8164d5ecacb141799c709994e0dd99e5c87f
 
         
     })
