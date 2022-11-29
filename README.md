@@ -11,41 +11,51 @@ Triathon is Decentralized Test-driven and Fundraising Platform.
 [Our website](https://www.triathon.space/)
 
 ## Development 
+
 Environment
+
 - Nodejs v14.18.2
 - npm 6.14.15
 - Hardhat 2.8.3
 
 Add dependencies
+
 ```shell
 npm install
 ```
+
 or
+
 ```shell
 yarn
 ```
 
 Compile
+
 ```shell
 npx hardhat compile
 ```
 
 Test
+
 ```shell
 npx hardhat test
 ```
 
 Test with gas report
+
 ```shell
 REPORT_GAS=true npx hardhat test
 ```
 
 Deploy
+
 ```shell
 node scripts/deploy.js
 ```
 
 Clean
+
 ```shell
 npx hardhat clean
 ```
@@ -118,27 +128,25 @@ Contracts files under the 'contracts' directory are all contracts developed for 
 
 ## Activity
 
-* BSCDetectV2.sol: use a different method to calculate the earning to replce ShipStaking.
+* BSCDetectV2.sol: use a different method to calculate the earning to replace ShipStaking.
 
 ## Staking reward
 
+- NFT staking rewards are determined based on the number of spaceships staked by users (M0).
 
-* NFT staking rewards are determined based on the number of spaceships staked by users (M0).
+- Rewards are issued once a day, and the total amount of GEON tokens generated is M0*fixed coefficient.
 
-* Rewards is issued once a day, and the total amount of geon tokens generated is M0*fixed coefficient.
+- The reward ratio is determined by the following factors：
 
-* The reward of user points is determined by the following factors:
-  
-  [1]、Component (prop) energy: number of props×100×20%
+  [1]、Component (parts) energy: number of parts×100×20%
 
-  [2]、Level energy: Level value x40%
+  [2]、LV (Level) energy: Level value x40%
 
-  [3]、Combat Energy: Combat Strength x10%
+  [3]、CE (Combat Effectiveness): Combat Strength x10%
 
-  [4]、HP energy: HP value x10%
+  [4]、HP(Health points) energy: HP value x10%
 
   [5]、Category energy: Category value x20%
 
-*  NFT energy value = component energy + level energy + combat force energy + blood volume energy + category energy
-
- Single NFT test reward = single NFT energy value / total energy value of all NFTs * NFT number * 248
+- NFT energy value = parts energy + LV energy + CE energy + HP energy + category energy
+  Single NFT test reward = single NFT energy value / total energy value of all NFTs * NFT number * 350
