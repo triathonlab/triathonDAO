@@ -10,6 +10,48 @@ Triathon is Decentralized Test-driven and Fundraising Platform.
 
 [Our website](https://www.triathon.space/)
 
+## Structure
+
+```
+.
+├── .env.example
+├── .gitignore
+├── README.md
+├── contracts : all contracts
+│   ├── Artwork.sol
+│   ├── BSCDetectV2.sol
+│   ├── Geon.sol
+│   ├── Hull.sol
+│   ├── NFTAuction.sol
+│   ├── NFTSelling.sol
+│   ├── NoFreeMint.sol
+│   ├── Parts.sol
+│   ├── Ship.sol
+│   ├── ShipExpand.sol
+│   ├── Trias.sol
+│   └── artifacts
+├── hardhat.config.ts
+├── package-lock.json
+├── package.json
+├── scripts : main deploy script 
+│   ├── deploy.ts 
+│   └── deployAll.ts
+├── test : all test file
+│   ├── Artwork.ts
+│   ├── BSCDetectV2.ts
+│   ├── Geon.ts
+│   ├── Hull.ts
+│   ├── NFTAuction.ts
+│   ├── NFTSelling.ts
+│   ├── NoFreeMint.ts
+│   ├── Part.ts
+│   ├── Ship.ts
+│   ├── ShipExpand.ts
+│   └── Trias.ts
+├── tsconfig.json
+└── yarn.lock
+```
+
 ## Development 
 
 Environment
