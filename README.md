@@ -192,3 +192,5 @@ Contracts files under the 'contracts' directory are all contracts developed for 
 
 - NFT energy value = parts energy + LV energy + CE energy + HP energy + category energy
   Single NFT test reward = single NFT energy value / total energy value of all NFTs * NFT number * 350
+  
+  Triathon official mailbox：triathonspace@gmail.com
